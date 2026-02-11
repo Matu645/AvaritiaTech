@@ -1,6 +1,9 @@
 package net.matu645.avaritiatech;
 
 import com.mojang.logging.LogUtils;
+import net.matu645.avaritiatech.item.ModCreativeModeTabs;
+import net.matu645.avaritiatech.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -27,11 +30,14 @@ public class AvaritiaTech
     {
         IEventBus modEventBus = context.getModEventBus();
 
+        ModCreativeModeTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
     }
@@ -44,7 +50,10 @@ public class AvaritiaTech
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.PURE_NEUTRONIUM_INGOT);
+            event.accept(ModItems.PURE_NEUTRONIUM_DUST);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
