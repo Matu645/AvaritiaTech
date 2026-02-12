@@ -1,6 +1,7 @@
 package net.matu645.avaritiatech;
 
 import com.mojang.logging.LogUtils;
+import net.matu645.avaritiatech.block.ModBlocks;
 import net.matu645.avaritiatech.item.ModCreativeModeTabs;
 import net.matu645.avaritiatech.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -33,6 +34,8 @@ public class AvaritiaTech
         ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
+
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

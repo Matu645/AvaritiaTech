@@ -1,5 +1,8 @@
 {
   "item.avaritiatech.pure_neutronium_ingot": "Pure Neutronium Ingot",
   "item.avaritiatech.pure_neutronium_dust": "Pure Neutronium Dust",
+
+  "block.avaritiatech.darksteel_block": "Block of Darksteel",
+
   "creativetab.avaritia_tech_tab": "Avaritia Tech"
 }

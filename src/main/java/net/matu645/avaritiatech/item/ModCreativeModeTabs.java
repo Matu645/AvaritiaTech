@@ -1,6 +1,7 @@
 package net.matu645.avaritiatech.item;
 
 import net.matu645.avaritiatech.AvaritiaTech;
+import net.matu645.avaritiatech.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -19,6 +20,8 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.PURE_NEUTRONIUM_INGOT.get());
                         output.accept(ModItems.PURE_NEUTRONIUM_DUST.get());
+
+                        output.accept(ModBlocks.DARKSTEEL_BLOCK.get());
                     })
                     .build());
 
